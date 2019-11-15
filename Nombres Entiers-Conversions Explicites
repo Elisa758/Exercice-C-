@@ -1,0 +1,18 @@
+using System;
+
+class MainClass {
+  public static void Main (string[] args) {
+    int x = int.MaxValue;
+    long y = long.MaxValue;
+    short z = short.MaxValue;
+    //Additionne les trois dans une variable du type qui a suffisamment de bits pour coder le résultat de l'opération.
+    //L'addition est explicitement convertie vers le type de la variable qui stocke son résultat
+    Console.WriteLine(x);
+    Console.WriteLine(y);
+    Console.WriteLine(z);
+
+    ulong result=(ulong)x+(ulong)y+(ulong)z;
+
+    Console.WriteLine(result);
+  }
+}
