@@ -9,7 +9,7 @@ class MainClass {
     for (int i = 0; i <=4; i++)
     {
       troisTab[i]=premierTab[i];
-      troisTab[6+i]=deuxiemeTab[i];
+      troisTab[5+i]=deuxiemeTab[i];
     }
            
   }
