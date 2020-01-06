@@ -5,7 +5,7 @@ class MainClass {
     int[] premierTab = new int[] {1, 2, 3, 4, 5};
     int[] deuxiemeTab = new int[] {6, 7, 8, 9, 10};
     
-    int[] troisTab = new int[11];
+    int[] troisTab = new int[10];
     for (int i = 0; i <=4; i++)
     {
       troisTab[i]=premierTab[i];
