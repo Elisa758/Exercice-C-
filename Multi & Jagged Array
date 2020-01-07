@@ -1,0 +1,25 @@
+using System;
+
+class MainClass {
+  public static void Main (string[] args) {
+    int [,] uniforme=new int [3,3] {{1,2,3},{2,3,4},{3,4,5}};
+
+    int[][] irregulier=new int[3][];
+
+    irregulier[0]=new int[3];
+
+    irregulier[0][0]=uniforme[0,0];
+    irregulier[0][1]=uniforme[0,1];
+    irregulier[0][2]=uniforme[0,2];
+
+    irregulier[1]=new int[2];
+
+    irregulier[1][0]=uniforme[1,1];
+    irregulier[1][1]=uniforme[1,2];
+
+    irregulier[2]=new int[1];
+
+    irregulier[2][0]=uniforme[2,2];
+
+  }
+}
