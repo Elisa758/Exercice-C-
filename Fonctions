@@ -50,7 +50,7 @@ namespace Challenge_Odyssey_Fonctions
                 if (operation == "add")
                 {
                     float result = Add(firstNb, secondNb);
-                    Console.WriteLine(result);
+                    Console.WriteLine(firstNb + "+" + secondNb + "=" + result);
                 }
                 else if (operation == "multiply")
                 {
