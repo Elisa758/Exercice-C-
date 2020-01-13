@@ -1,0 +1,57 @@
+using System;
+
+namespace Challenge_Conditions_Odyssey
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Limit1");
+            string limitA = Console.ReadLine();
+            int limit1 = Convert.ToInt32(limitA);
+
+            Console.WriteLine("Limit2");
+            string limitB = Console.ReadLine();
+            int limit2 = Convert.ToInt32(limitB);
+
+            Console.WriteLine("Integer to Limit");
+            string entier = Console.ReadLine();
+            int integer = Convert.ToInt32(entier);
+
+            
+           if (limit1 < limit2)
+            {
+                if (integer < limit1)
+                {
+                    Console.WriteLine("You have entered " + entier + " which is lower than " + limit1 + " which is the minimum");
+                    int resultingInteger = limit1;
+                    Console.WriteLine("Resulting Integer : " + limit1);
+                }
+
+                else if (limit2 < integer)
+                {
+                    Console.WriteLine("You have entered " + entier + " which is greater than " + limit2 + " which is the maximum");
+                    int resultingInteger = limit2;
+                    Console.WriteLine("Resulting Integer : " + limit2);
+                }
+            }
+            else if (limit2 < limit1)
+            {
+                if (integer < limit2)
+                {
+                    Console.WriteLine("You have entered " + entier + " which is lower than " + limit2 + " which is the minimum");
+                    int resultingInteger = limit2;
+                    Console.WriteLine("Resulting Integer : " + limit2);
+                }
+
+                else if (limit1 < integer)
+                {
+                    Console.WriteLine("You have entered " + entier + " which is greater than " + limit1 + " which is the maximum");
+                    int resultingInteger = limit1;
+                    Console.WriteLine("Resulting Integer : " + limit1);
+                }
+            }
+
+        }
+    }
+}
