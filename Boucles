@@ -1,0 +1,42 @@
+using System;
+
+namespace Challenge_Odyssey_Boucles
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string[] moves = new string[32];
+            int iterator = 0;
+            bool moveDone = false;
+
+            while(iterator<moves.Length && !moveDone)
+            {
+                Console.WriteLine("Enter a movement : ");
+                string moveToDo = Console.ReadLine();
+                
+                if(moveToDo == "done")
+                {
+                    moveDone = true;
+                }
+                else
+                {
+                    moves[iterator] = moveToDo;
+                    iterator = iterator + 1;
+                }
+                
+            }
+            Console.WriteLine("Number of iteration of movements : ");
+            string iteratorMovement = Console.ReadLine();
+            int iMovement = Convert.ToInt32(iteratorMovement);
+
+            for (int j = 0; j < iMovement; j++)
+            {
+                for (int i = 0; i < moves.Length; i++)
+                {
+                    Console.WriteLine(moves[i]);
+                }
+            }
+        }
+    }
+}
