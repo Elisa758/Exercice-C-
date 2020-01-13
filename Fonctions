@@ -1,0 +1,86 @@
+using System;
+
+namespace Challenge_Odyssey_Fonctions
+{
+    class Program
+    {
+        static float Add(float x,  float y)
+        {
+            float result = x + y; 
+            return result;         
+        }
+
+        static float Substract(float x, float y)
+        {
+            float result = x - y;
+            return result;
+        }
+
+        static float Multiply(float x, float y)
+        {
+            float result = x * y;
+            return result;
+        }
+
+        static float Divide(float x, float y)
+        {
+            float result = x / y;
+            return result;
+        }
+
+        static int Modulo(int x, int y)
+        {
+            int result = x % y;
+            return result;
+        }
+
+        static void Main(string[] args)
+        {
+            while(true)
+            {
+                Console.WriteLine("First operand");
+                float firstNb = Convert.ToSingle(Console.ReadLine());
+
+                Console.WriteLine("Second operand");
+                float secondNb = Convert.ToSingle(Console.ReadLine());
+
+                Console.WriteLine("Which operation you choose : ");
+                string operation = Console.ReadLine();
+
+                if (operation == "add")
+                {
+                    float result = Add(firstNb, secondNb);
+                    Console.WriteLine(result);
+                }
+                else if (operation == "multiply")
+                {
+                    float result = Multiply(firstNb, secondNb);
+                    Console.WriteLine(result);
+                }
+                else if (operation == "divide")
+                {
+                    float result = Divide(firstNb, secondNb);
+                    Console.WriteLine(result);
+                }
+                else if (operation == "substract")
+                {
+                    float result = Substract(firstNb, secondNb);
+                    Console.WriteLine(result);
+                }
+
+                else if (operation == "modulo")
+                {
+                    int result = Modulo((int) firstNb, (int)secondNb);
+                    Console.WriteLine(result);
+                }
+
+                else
+                {
+                    Console.WriteLine("Unknown operation "+ operation);
+                }
+
+            }
+
+        }
+    }
+}
