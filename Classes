@@ -1,0 +1,68 @@
+using System;
+
+namespace Challenge_Odyssey_Classes
+{
+    
+        public class Character
+        {
+            public string Name;
+            public int pv;
+            public int AttackForce;
+            public int DefenseForce;
+
+             
+            public bool isAlive()
+            {
+                return pv > 0;                
+            }
+
+            public int Attack(Character fighter)
+            {
+                fighter.pv = fighter.pv-(Math.Abs(AttackForce-fighter.DefenseForce));
+                return fighter.pv;
+            }
+
+        public class Program
+        {
+            static void Main(string[] args)
+            {
+                Character witcher = new Character();
+                witcher.Name ="Geralt de Riv" ;
+                witcher.pv = 500;
+                witcher.AttackForce = 170;
+                witcher.DefenseForce = 100;
+
+                Character monster = new Character();
+                monster.Name = "Stryge";
+                monster.pv = 450;
+                monster.AttackForce = 150;
+                monster.DefenseForce = 90;
+
+
+                while (witcher.isAlive() && monster.isAlive())
+                {
+
+                    monster.Attack(witcher);
+                    witcher.Attack(monster);
+                    Console.WriteLine("Monster PV : " + monster.pv);
+                    Console.WriteLine("Witcher PV : " + witcher.pv);
+
+
+                }
+
+                if (witcher.pv>0)
+                {
+                    Console.WriteLine(witcher.Name + " has defeated the " + monster.Name);
+
+                }
+                else
+                {
+                    Console.WriteLine(monster.Name + "has defeated the" + witcher.Name);
+
+                }
+
+            }
+        }
+ 
+    }
+}
