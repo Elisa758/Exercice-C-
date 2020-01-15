@@ -1,0 +1,121 @@
+using System;
+
+namespace Challenge_Odyssey_Encapsulation
+{
+    public class BeerEncapsulator
+    {
+        private static  double _avalaibleBeerVolume;
+        private static int _avalaibleBottles;
+        private static int _avalaibleCapsules;
+
+        public static  double AddBeer(double addedBeer)
+        {
+
+            _avalaibleBeerVolume = _avalaibleBeerVolume + addedBeer;
+
+            return _avalaibleBeerVolume;
+
+        }
+
+        public static bool IsMissingComponentsForProduction(int nbBeerToMake)
+        {
+            // Quand un composant manque : Message affichant la quantité de composant à ajouter à la fabrication des bouteilles
+
+            while (_avalaibleBottles > 0 && _avalaibleCapsules > 0 && _avalaibleBeerVolume >= 0.33 && nbBeerToMake>0)
+            {
+                _avalaibleCapsules = _avalaibleCapsules - 1;
+                _avalaibleBottles = _avalaibleBottles - 1;
+                _avalaibleBeerVolume = _avalaibleBeerVolume - 0.33;
+                nbBeerToMake = nbBeerToMake - 1;
+                
+            }
+
+            if (_avalaibleCapsules < nbBeerToMake)
+            {
+                Console.WriteLine("Add at least " + (nbBeerToMake - _avalaibleCapsules) + " capsules to continue the fabrication");
+                
+
+
+            }
+            if (_avalaibleBottles < nbBeerToMake)
+            {
+                Console.WriteLine("Add at least " + (nbBeerToMake - _avalaibleBottles) + " bottles to continue the fabrication");
+                
+
+
+            }
+
+            if (_avalaibleBeerVolume < nbBeerToMake * 0.33)
+            {
+                Console.WriteLine("Add at least " + (nbBeerToMake * 0.33 - _avalaibleBeerVolume) + " liters of beer to continue the fabrication");
+                return true;
+
+            }
+            return false;
+
+        }
+        public static int ProduceEncapsulatedBeerBottles(int nbBottleToMake)
+        {
+
+
+            if (!IsMissingComponentsForProduction(nbBottleToMake))
+            {
+                return nbBottleToMake;
+            }
+
+            else
+            {
+                return 0;
+            }
+
+        }
+
+        public void SetBottles(int nbBottles)
+        {
+            _avalaibleBottles = nbBottles;
+        }
+
+        public int GetBottles()
+        {
+            return _avalaibleBottles;
+        }
+
+        public void SetCapsules (int nbCapsules)
+        {
+            _avalaibleCapsules = nbCapsules;
+        }
+
+        public int GetCapsules()
+        {
+            return _avalaibleCapsules;
+        }
+    }
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            BeerEncapsulator beerEncapsulator = new BeerEncapsulator();
+
+            Console.WriteLine("Liters of Beer available : ");
+            BeerEncapsulator.AddBeer(Convert.ToInt32(Console.ReadLine()));
+
+            Console.WriteLine("Number of bottles available : ");
+            beerEncapsulator.SetBottles(Convert.ToInt32(Console.ReadLine()));
+
+            Console.WriteLine("Number of capsules available : ");
+            beerEncapsulator.SetCapsules(Convert.ToInt32(Console.ReadLine()));
+
+
+
+            double beerAdded = BeerEncapsulator.AddBeer(0);
+
+            Console.WriteLine("Liters of beer total : " + beerAdded);
+
+            int bottlesMade = BeerEncapsulator.ProduceEncapsulatedBeerBottles(6);
+
+            Console.WriteLine("Number of bottles made : " + bottlesMade);
+
+        }
+    }
+    
+}
