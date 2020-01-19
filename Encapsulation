@@ -111,7 +111,8 @@ namespace Challenge_Odyssey_Encapsulation
 
             Console.WriteLine("Liters of beer total : " + beerAdded);
 
-            int bottlesMade = BeerEncapsulator.ProduceEncapsulatedBeerBottles(6);
+            Console.WriteLine("How many bottles of beer do you want ?");
+            int bottlesMade = BeerEncapsulator.ProduceEncapsulatedBeerBottles(Convert.ToInt32(Console.ReadLine()));
 
             Console.WriteLine("Number of bottles made : " + bottlesMade);
 
