@@ -60,7 +60,7 @@ namespace Challenge_Odyssey_POO_Heritage
         { }
     }
 
-    public class Reptilian : Quadrupède
+    public abstract class Reptilian : Quadrupède
     {
         public Reptilian(string name) : base(name)
         { }
