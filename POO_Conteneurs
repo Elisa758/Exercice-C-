@@ -1,0 +1,71 @@
+using System;
+
+namespace Challenge_Odyssey_POO_Constructeurs
+{
+    public class Building
+    {
+        private double _heightBuilding;
+        private int _nbOfFloor;
+        
+        public Building(double heightBuilding, int nbOfFloor)
+        {
+            _heightBuilding = heightBuilding;
+            _nbOfFloor = nbOfFloor;
+        }
+        public Building(int nbOfFloor)
+        {
+            _heightBuilding = 3 * nbOfFloor;
+        }
+        
+        public double GetFloorMaxSize()
+        {
+            return _heightBuilding / _nbOfFloor;
+        }
+
+        public int GetFloorCount()
+        {
+            return _nbOfFloor;
+        }
+
+        public double GetSize()
+        {
+            return _heightBuilding;
+        }
+    }
+
+
+
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+
+            Console.WriteLine("How many floors do you want ? ");
+            int nbOfFloor = Convert.ToInt32(Console.ReadLine());
+
+            Building firstBuilding = new Building(nbOfFloor);
+
+            double buildingSize = firstBuilding.GetSize();
+
+            Console.WriteLine("Size of the buildings : " + buildingSize);
+            
+              
+            
+
+            Console.WriteLine("Height of the buildings : ");
+            double height = Convert.ToDouble(Console.ReadLine());
+
+            Console.WriteLine("How many floors do you want ? ");
+            int nbOfFloor1 = Convert.ToInt32(Console.ReadLine());
+
+            Building secondBuilding = new Building(height,nbOfFloor1);
+
+            double floorMaxSize = secondBuilding.GetFloorMaxSize();
+            Console.WriteLine("Size maximum of floors : " + floorMaxSize);
+
+
+
+        }
+    }
+}
