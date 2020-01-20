@@ -33,14 +33,14 @@ namespace Challenge_Odyssey_Encapsulation
             if (_avalaibleCapsules < nbBeerToMake)
             {
                 Console.WriteLine("Add at least " + (nbBeerToMake - _avalaibleCapsules) + " capsules to continue the fabrication");
-                
+                return true;
 
 
             }
             if (_avalaibleBottles < nbBeerToMake)
             {
                 Console.WriteLine("Add at least " + (nbBeerToMake - _avalaibleBottles) + " bottles to continue the fabrication");
-                
+                return true;
 
 
             }
