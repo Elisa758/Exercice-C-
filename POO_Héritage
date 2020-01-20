@@ -33,6 +33,10 @@ namespace Challenge_Odyssey_POO_Heritage
     {
         public Bipède(string name) : base(name, 2)
         { }
+        public override void Move()
+        {
+            Console.WriteLine(_name + " walks with 2 legs");
+        }
     }
 
     public class Human : Bipède
@@ -52,6 +56,10 @@ namespace Challenge_Odyssey_POO_Heritage
     {
         public Quadrupède(string name) : base(name, 4)
         { }
+        public override void Move()
+        {
+            Console.WriteLine(_name + " moves on his 4 legs");
+        }
     }
 
     public class Elephant : Quadrupède
@@ -81,6 +89,7 @@ namespace Challenge_Odyssey_POO_Heritage
     {
         public Lizard(string name) : base(name)
         { }
+
     }
 
 
@@ -89,6 +98,18 @@ namespace Challenge_Odyssey_POO_Heritage
     {
         static void Main(string[] args)
         {
+            Animal[] animalsSet = new Animal[5];
+
+            Human human = new Human("Samuel");
+            Monkey monkey = new Monkey("George");
+
+            Elephant elephant = new Elephant("Dumbo");
+            Turtle turtle = new Turtle("Speedy");
+            Lizard lizard = new Lizard("Pascal");
+
+           
+           turtle.Move();
+           lizard.Move();
 
 
 
