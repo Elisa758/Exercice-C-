@@ -1,0 +1,107 @@
+using System;
+
+namespace Challenge_Odyssey_POO_Heritage
+{
+    public abstract class Animal
+    {
+        protected short _legsCount;
+        protected string _name;
+
+        public Animal(string name, short legsCount)
+        {
+            _name = name;
+            _legsCount = legsCount;
+        }
+
+        public void Eat()
+        {
+            Console.WriteLine(_name + " eats");
+        }
+
+        public virtual void Move()
+        {
+            Console.WriteLine(_name + " walks");
+        }
+
+        public string GetName()
+        {
+            return _name;
+        }
+    }
+
+    public abstract class Bipède : Animal
+    {
+        public Bipède(string name) : base(name, 2)
+        { }
+    }
+
+    public class Human : Bipède
+    {
+        public Human(string name) : base(name)
+        { }
+
+    }
+
+    public class Monkey : Bipède
+    {
+        public Monkey(string name) : base(name)
+        { }
+    }
+
+    public abstract class Quadrupède : Animal
+    {
+        public Quadrupède(string name) : base(name, 4)
+        { }
+    }
+
+    public class Elephant : Quadrupède
+    {
+        public Elephant(string name) : base(name)
+        { }
+    }
+
+    public class Reptilian : Quadrupède
+    {
+        public Reptilian(string name) : base(name)
+        { }
+    }
+
+    public class Turtle : Reptilian
+    {
+        public Turtle(string name) : base(name)
+        { }
+
+        public override void Move()
+        {
+            Console.WriteLine(_name + " moves really slowly");
+        }
+    }
+
+    public class Lizard : Reptilian
+    {
+        public Lizard(string name) : base(name)
+        { }
+    }
+
+
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Animal[] animalsSet = new Animal[5];
+
+            Human human = new Human("Samuel");
+            Monkey monkey = new Monkey("George");
+
+            Elephant elephant = new Elephant("Dumbo");
+            Turtle turtle = new Turtle("Speedy");
+            Lizard lizard = new Lizard("Rango");
+
+           
+           turtle.Move();
+
+
+        }
+    }
+}
