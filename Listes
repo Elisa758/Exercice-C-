@@ -1,0 +1,24 @@
+using System;
+
+namespace Challenge_Odyssey_Liste
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            System.Collections.Generic.List<string> stringCollection = new System.Collections.Generic.List<string>();
+
+            stringCollection.Add("hello");
+            stringCollection.Add("goodbye");
+            stringCollection.Add("colors");
+
+            stringCollection.RemoveAt(0);
+            stringCollection.Remove("colors");
+            stringCollection[0] = "hello";
+
+            
+            
+
+        }
+    }
+}
