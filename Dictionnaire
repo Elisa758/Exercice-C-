@@ -1,0 +1,19 @@
+using System;
+using System.Collections.Generic;
+
+namespace Challenge_Odyssey_Dictionnaires
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Dictionary<char, string> dictionary = new Dictionary<char, string>();
+            dictionary['a'] ="artist";
+            dictionary['b'] ="balloon";
+            dictionary['c'] ="cat";
+
+            dictionary.Remove('c');
+
+        }
+    }
+}
