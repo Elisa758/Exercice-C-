@@ -15,15 +15,15 @@ namespace Challenge_Odyssey_POO_Delegates
         }
         
         
-        public delegate string ShowMoney(int money);
+        public delegate string ShowMoney(double money);
 
-        public static string Euros(int money)
+        public static string Euros(double money)
         {
             return Convert.ToString(money) + "euros";
 
         }
 
-        public static string Dollars(int money)
+        public static string Dollars(double money)
         {
             return Convert.ToString(money) + " $";
                         
