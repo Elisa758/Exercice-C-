@@ -13,13 +13,13 @@ namespace Challenge_Odyssey_POO_IEnumerable
             Console.WriteLine("Choose an integer : ");
             int n = Convert.ToInt32(Console.ReadLine());
 
-            IEnumerable<int> choosenArray = integerArray.Where((x) => x <= n);            
-            foreach(int value in choosenArray)
+            IEnumerable<int> integerLowerThanN = integerArray.Where((x) => x <= n);            
+            foreach(int value in integerLowerThanN)
             {
                 Console.WriteLine(value);
             }
             
-            double mean = choosenArray.Average();
+            double mean = integerLowerThanN.Average();
             Console.WriteLine(mean);
 
         }
