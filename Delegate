@@ -1,0 +1,35 @@
+using System;
+
+namespace Challenge_Odyssey_POO_Delegates
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            ShowMoney showMoney = Euros;
+            Console.WriteLine(showMoney(500));
+
+            showMoney = Dollars;
+            Console.WriteLine(showMoney(500));
+
+        }
+        
+        
+        public delegate string ShowMoney(int money);
+
+        public static string Euros(int money)
+        {
+            return Convert.ToString(money) + "euros";
+
+        }
+
+        public static string Dollars(int money)
+        {
+            return Convert.ToString(money) + " $";
+                        
+        }
+    }
+
+
+
+}
