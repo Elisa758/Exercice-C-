@@ -1,0 +1,54 @@
+using System;
+
+namespace SOLID_LSP
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+        }
+    }
+    
+    public abstract class Polygon
+    {
+        public double _area { get; set; }
+
+        public abstract double Area();
+
+    }
+    
+    class Rectangle : Polygon
+    {
+        private double width;
+        private double height;
+        public void SetWidth(double width)
+        {
+            this.width = width;
+        }
+
+        public void SetHeight(double height)
+        {
+            this.height = height;
+        }
+
+        public override double Area()
+        {
+            _area = height * width;
+            return _area;
+        }
+
+    }
+
+    class Square : Polygon
+    {
+        private double _sides;
+
+        public override double Area()
+        {
+            _area = _sides * _sides;
+            return _area;
+        }
+    }
+}
+
+
